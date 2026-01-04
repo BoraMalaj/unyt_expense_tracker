@@ -412,7 +412,8 @@ visualizer = Visualizer(manager)
 # st.sidebar.title("ShinyJar Menu 💎")
 
 # Sidebar with ShinyJar Logo – pro branding!
-st.sidebar.image("logo.png", width=200)  # Resizes nicely, keeps aspect ratio
+# st.sidebar.image("logo.png", width=200)  # Resizes nicely, keeps aspect ratio
+st.sidebar.image("https://raw.githubusercontent.com/BoraMalaj/unyt_expense_tracker/main/logo.png", width=200)
 st.sidebar.markdown("### ShinyJar Expense Tracker 💎")
 page = st.sidebar.radio("Select Action", [
     "Home 🏠",
