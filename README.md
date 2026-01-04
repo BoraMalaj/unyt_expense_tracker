@@ -1,5 +1,7 @@
 # UNYT Expense Tracker – Bora's ShinyJar Edition 💎
 
+![ShinyJar Expense Tracker](streamlit_browser_version/logo.png)
+
 Inspired by my UNYT Master Project: A Python/Streamlit app to track expenses for small businesses like my jewelry shop (ShinyJar on Insta/TikTok). Features budgets, alerts, reports, interactive charts, and exports.
 
 ## Quick Start
@@ -18,7 +20,6 @@ Inspired by my UNYT Master Project: A Python/Streamlit app to track expenses for
 - Export to Excel/PDF/Image
 
 Check live in Streamlit Community Cloud area: https://boramalaj-unyt-expense-tracker.streamlit.app/
-
 Built with love for real biz use – tracks gold buys, ads, more! 🚀
 
 ## Screenshots
