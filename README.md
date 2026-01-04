@@ -10,8 +10,10 @@ Inspired by my UNYT Master Project: A Python/Streamlit app to track expenses for
 3. Run: `cd streamlit_browser_version && streamlit run streamlit_expense_tracker.py`
 4. Demo Data: Run `cd streamlit_browser_version && python dummy_data_generator.py` for sample jewelry expenses/budgets.
 5. Check the project in Streamlit Community area: 
-    - https://boramalaj-unyt-expense-tracker.streamlit.app/         (Version has no data, data needs to be added manually)
-    - https://boramalaj-unyt-cloud-expense-tracker.streamlit.app/   (Version allows to upload dummy data in form of csv file - check csv format first!)
+    - https://boramalaj-unyt-expense-tracker.streamlit.app/         
+        (This version has no data, data needs to be added manually)
+    - https://boramalaj-unyt-cloud-expense-tracker.streamlit.app/   
+        (This version allows to upload dummy data in form of csv file - check csv format first!)
 
 ## Features
 - Add/Edit/Delete expenses
