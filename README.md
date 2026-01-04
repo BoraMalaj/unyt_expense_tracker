@@ -7,6 +7,7 @@ Inspired by my UNYT Master Project: A Python/Streamlit app to track expenses for
 2. Install: `pip install -r requirements.txt`
 3. Run: `cd streamlit_browser_version && streamlit run streamlit_expense_tracker.py`
 4. Demo Data: Run `cd streamlit_browser_version && python dummy_data_generator.py` for sample jewelry expenses/budgets.
+5. Check the project in Streamlit Community area: https://boramalaj-unyt-expense-tracker.streamlit.app/
 
 ## Features
 - Add/Edit/Delete expenses

@@ -1,5 +1,4 @@
 venv/
-shinyjar_data.xlsx
 __pycache__/
 *.pyc
 .streamlit
