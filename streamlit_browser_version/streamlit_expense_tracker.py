@@ -6,6 +6,9 @@
 # The script runs as follows: "streamlit run streamlit_expense_tracker.py" 
 # Check requirements.txt to match the requested python packages for the script
 # Example (partial libs to be installed): pip install streamlit pandas numpy matplotlib seaborn plotly openpyxl
+# App is hosted in GitHub and Streamlit Community Area
+# GitHub: https://github.com/BoraMalaj/unyt_expense_tracker
+# Streamlit: https://boramalaj-unyt-expense-tracker.streamlit.app/
 
 import streamlit as st
 import pandas as pd
@@ -18,6 +21,12 @@ from io import BytesIO
 from matplotlib.backends.backend_pdf import PdfPages
 import os
 import sys
+
+# Init session state for uploaded data via xls or csv
+if 'expenses_df' not in st.session_state:
+    st.session_state.expenses_df = manager.expenses_df
+if 'budgets_df' not in st.session_state:
+    st.session_state.budgets_df = manager.budgets_df
 
 # Setting up Seaborn for beautiful static charts
 sns.set_style("darkgrid")
@@ -98,6 +107,10 @@ class ExpenseManager:
                 self.budgets_df.to_excel(writer, sheet_name="Budgets", index=False)
         except Exception as e:
             st.error(f"Error saving data: {e}")
+        
+        # Always updating the session to get the app Cloud persistence
+        st.session_state.expenses_df = self.expenses_df
+        st.session_state.budgets_df = self.budgets_df
 
     def add_expense(self, expense):
         """Add new expense, save to Excel."""
@@ -410,6 +423,21 @@ page = st.sidebar.radio("Select Action", [
 if page == "Home 🏠":
     st.title("Welcome to ShinyJar Expense Tracker 💎")
     st.markdown("Inspired by UNYT Project – track ShinyJar's Jewelry Business Expenses!")
+    
+    # file upload in case no data in cloud because of anykind of reset
+    with st.expander("📂 Upload Demo CSV (Expenses)"):
+        uploaded_file = st.file_uploader("Choose CSV file (format: amount,date,category,description,payment_method,tags)", type="csv")
+        if uploaded_file:
+            try:
+                upload_df = pd.read_csv(uploaded_file)
+                upload_df['date'] = pd.to_datetime(upload_df['date'])  # Fix dates
+                manager.expenses_df = pd.concat([manager.expenses_df, upload_df]).drop_duplicates().reset_index(drop=True)
+                manager._save_all()  # Updates session + local if possible
+                st.success("CSV uploaded & merged! Refresh to see.")
+                st.rerun()
+            except Exception as e:
+                st.error(f"Upload failed: {e}. Check CSV format.")
+    
     alerts = manager.get_alerts()
     if alerts:
         st.warning("\n".join(alerts))
