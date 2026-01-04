@@ -1,0 +1,63 @@
+amount,date,category,description,payment_method,tags
+57.26,2025-10-06,Shopping,Necklace materials,Transfer,business
+109.2,2025-10-06,Transport,Electricity,Card,gift
+333.89,2025-10-07,Shopping,Taxi,Transfer,
+123.24,2025-10-07,Entertainment,Instagram ads,Transfer,business
+85.48,2025-10-07,Entertainment,Electricity,Transfer,gift
+207.38,2025-10-12,Entertainment,Electricity,Transfer,business
+307.28,2025-10-13,Rent,Lunch,Transfer,monthly
+146.87,2025-10-16,Utilities,Groceries,Card,
+317.68,2025-10-16,Jewelry Supplies,Cinema,Transfer,business
+309.21,2025-10-16,Entertainment,Taxi,Card,personal
+154.49,2025-10-16,Rent,Necklace materials,Cash,gift
+140.74,2025-10-18,Shopping,Groceries,Cash,
+238.43,2025-10-19,Transport,Lunch,Card,urgent
+347.71,2025-10-19,Jewelry Supplies,Coffee,Transfer,monthly
+259.49,2025-10-19,Rent,Necklace materials,Transfer,gift
+290.6,2025-10-20,Utilities,Necklace materials,Transfer,business
+12.93,2025-10-26,Jewelry Supplies,Coffee,Card,personal
+107.69,2025-10-26,Entertainment,Taxi,Cash,personal
+260.66,2025-10-27,Jewelry Supplies,Lunch,Cash,urgent
+126.71,2025-11-05,Rent,Groceries,Cash,urgent
+329.74,2025-11-06,Transport,Taxi,Transfer,gift
+239.48,2025-11-06,Rent,Taxi,Cash,urgent
+287.46,2025-11-07,Entertainment,Coffee,Cash,gift
+95.11,2025-11-08,Transport,Groceries,Card,personal
+329.76,2025-11-09,Jewelry Supplies,Taxi,Card,personal
+134.47,2025-11-12,Marketing,Instagram ads,Card,business
+177.86,2025-11-14,Food,Necklace materials,Card,
+168.83,2025-11-16,Marketing,Instagram ads,Transfer,
+106.23,2025-11-17,Food,Electricity,Card,monthly
+208.0,2025-11-18,Shopping,Necklace materials,Transfer,business
+335.89,2025-11-21,Transport,Lunch,Card,gift
+333.41,2025-11-21,Entertainment,Lunch,Transfer,business
+32.68,2025-11-21,Transport,Groceries,Card,gift
+329.78,2025-11-22,Utilities,Groceries,Transfer,
+218.72,2025-11-23,Transport,Cinema,Card,personal
+98.64,2025-11-24,Rent,Taxi,Cash,monthly
+177.54,2025-11-24,Utilities,Groceries,Cash,business
+306.32,2025-11-26,Utilities,Necklace materials,Card,business
+59.08,2025-11-27,Marketing,Groceries,Card,urgent
+249.06,2025-11-28,Marketing,Groceries,Transfer,business
+99.62,2025-12-01,Food,Electricity,Card,gift
+205.66,2025-12-02,Utilities,Lunch,Transfer,business
+321.78,2025-12-03,Food,Electricity,Cash,
+112.47,2025-12-05,Entertainment,Taxi,Cash,business
+127.81,2025-12-05,Shopping,Cinema,Card,gift
+63.14,2025-12-07,Rent,Necklace materials,Card,monthly
+41.0,2025-12-08,Utilities,Groceries,Cash,
+205.46,2025-12-09,Rent,Groceries,Card,
+252.51,2025-12-10,Rent,Electricity,Card,gift
+107.4,2025-12-10,Shopping,Coffee,Card,gift
+44.91,2025-12-10,Food,Groceries,Transfer,urgent
+184.12,2025-12-15,Marketing,Lunch,Cash,
+325.24,2025-12-16,Jewelry Supplies,Electricity,Transfer,business
+115.28,2025-12-16,Rent,Cinema,Card,business
+140.71,2025-12-18,Transport,Cinema,Card,urgent
+233.93,2025-12-20,Transport,Lunch,Card,business
+278.12,2025-12-25,Marketing,Electricity,Cash,business
+294.75,2025-12-27,Food,Coffee,Cash,urgent
+326.49,2025-12-30,Rent,Groceries,Card,monthly
+121.81,2026-01-03,Shopping,Lunch,Transfer,monthly
+25.0,2026-01-04,Materials,Braclet gold model Anderson,Cash,"cash, materials, braclets, gold"
+32.0,2026-01-04,Materials,Ear rings,cash,
