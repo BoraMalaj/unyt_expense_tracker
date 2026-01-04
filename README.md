@@ -17,6 +17,8 @@ Inspired by my UNYT Master Project: A Python/Streamlit app to track expenses for
 - Budget vs Actual comparison
 - Export to Excel/PDF/Image
 
+Check live in Streamlit Community Cloud area: https://boramalaj-unyt-expense-tracker.streamlit.app/
+
 Built with love for real biz use – tracks gold buys, ads, more! 🚀
 
 ## Screenshots
