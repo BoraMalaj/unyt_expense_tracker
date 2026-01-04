@@ -408,7 +408,12 @@ visualizer = Visualizer(manager)
 
 # Sidebar Menu – left pane with all required features 
 # Extra here is the budget comparison, export of all data and some of the charts
-st.sidebar.title("ShinyJar Menu 💎")
+
+# st.sidebar.title("ShinyJar Menu 💎")
+
+# Sidebar with ShinyJar Logo – pro branding!
+st.sidebar.image("logo.png", width=200)  # Resizes nicely, keeps aspect ratio
+st.sidebar.markdown("### ShinyJar Expense Tracker 💎")
 page = st.sidebar.radio("Select Action", [
     "Home 🏠",
     "Add Expense ➕",
