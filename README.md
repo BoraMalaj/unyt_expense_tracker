@@ -72,7 +72,7 @@ This project combines academic rigor with practical business needs.
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.12 or higher
 - pip package manager
 
 ### Installation
@@ -85,6 +85,8 @@ This project combines academic rigor with practical business needs.
 
 2. **Install dependencies:**
    ```bash
+   python -m venv venv
+   source venv/bin/activate
    pip install -r requirements.txt
    ```
 
@@ -127,7 +129,7 @@ The app will open in your browser at `http://localhost:8501`
 ## 🛠️ Technical Architecture
 
 ### Core Technologies
-- **Python 3.8+** – Primary programming language
+- **Python 3.12+** – Primary programming language
 - **Streamlit** – Interactive web dashboard framework
 - **Pandas** – Data manipulation and analysis
 - **NumPy** – Efficient numerical computations
@@ -145,14 +147,14 @@ The app will open in your browser at `http://localhost:8501`
 ```
 unyt_expense_tracker/
 ├── streamlit_browser_version/
-│   ├── streamlit_expense_tracker.py  # Main Streamlit app
-│   ├── expense_manager.py            # Core expense logic
-│   ├── report_generator.py           # Analytics engine
-│   ├── visualizer.py                 # Chart generation
-│   ├── dummy_data_generator.py       # Sample data creator
-│   └── logo.png                      # App branding
+│   ├── streamlit_expense_tracker.py   # Main Streamlit app
+│   ├── expense_manager.py             # Core expense logic
+│   ├── report_generator.py            # Analytics engine
+│   ├── visualizer.py                  # Chart generation
+│   ├── dummy_data_generator.py        # Sample data creator
+│   └── logo.png                       # App branding
 ├── terminal_version/
-│   └── expense_tracker.py            # CLI version
+│   └── expense_tracker.py             # CLI version
 ├── requirements.txt                   # Python dependencies
 └── README.md                          # This file
 ```
@@ -173,7 +175,7 @@ unyt_expense_tracker/
 ![Budgets](screenshots/budgets.png)
 *Set and track category-specific budgets*
 
-_(Screenshots to be added)_
+_(Other screenshots to be added)_
 
 ---
 
