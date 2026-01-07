@@ -1,63 +1,61 @@
 amount,date,category,description,payment_method,tags
-57.26,2025-10-06,Shopping,Necklace materials,Transfer,business
-109.2,2025-10-06,Transport,Electricity,Card,gift
-333.89,2025-10-07,Shopping,Taxi,Transfer,
-123.24,2025-10-07,Entertainment,Instagram ads,Transfer,business
-85.48,2025-10-07,Entertainment,Electricity,Transfer,gift
-207.38,2025-10-12,Entertainment,Electricity,Transfer,business
-307.28,2025-10-13,Rent,Lunch,Transfer,monthly
-146.87,2025-10-16,Utilities,Groceries,Card,
-317.68,2025-10-16,Jewelry Supplies,Cinema,Transfer,business
-309.21,2025-10-16,Entertainment,Taxi,Card,personal
-154.49,2025-10-16,Rent,Necklace materials,Cash,gift
-140.74,2025-10-18,Shopping,Groceries,Cash,
-238.43,2025-10-19,Transport,Lunch,Card,urgent
-347.71,2025-10-19,Jewelry Supplies,Coffee,Transfer,monthly
-259.49,2025-10-19,Rent,Necklace materials,Transfer,gift
-290.6,2025-10-20,Utilities,Necklace materials,Transfer,business
-12.93,2025-10-26,Jewelry Supplies,Coffee,Card,personal
-107.69,2025-10-26,Entertainment,Taxi,Cash,personal
-260.66,2025-10-27,Jewelry Supplies,Lunch,Cash,urgent
-126.71,2025-11-05,Rent,Groceries,Cash,urgent
-329.74,2025-11-06,Transport,Taxi,Transfer,gift
-239.48,2025-11-06,Rent,Taxi,Cash,urgent
-287.46,2025-11-07,Entertainment,Coffee,Cash,gift
-95.11,2025-11-08,Transport,Groceries,Card,personal
-329.76,2025-11-09,Jewelry Supplies,Taxi,Card,personal
-134.47,2025-11-12,Marketing,Instagram ads,Card,business
-177.86,2025-11-14,Food,Necklace materials,Card,
-168.83,2025-11-16,Marketing,Instagram ads,Transfer,
-106.23,2025-11-17,Food,Electricity,Card,monthly
-208.0,2025-11-18,Shopping,Necklace materials,Transfer,business
-335.89,2025-11-21,Transport,Lunch,Card,gift
-333.41,2025-11-21,Entertainment,Lunch,Transfer,business
-32.68,2025-11-21,Transport,Groceries,Card,gift
-329.78,2025-11-22,Utilities,Groceries,Transfer,
-218.72,2025-11-23,Transport,Cinema,Card,personal
-98.64,2025-11-24,Rent,Taxi,Cash,monthly
-177.54,2025-11-24,Utilities,Groceries,Cash,business
-306.32,2025-11-26,Utilities,Necklace materials,Card,business
-59.08,2025-11-27,Marketing,Groceries,Card,urgent
-249.06,2025-11-28,Marketing,Groceries,Transfer,business
-99.62,2025-12-01,Food,Electricity,Card,gift
-205.66,2025-12-02,Utilities,Lunch,Transfer,business
-321.78,2025-12-03,Food,Electricity,Cash,
-112.47,2025-12-05,Entertainment,Taxi,Cash,business
-127.81,2025-12-05,Shopping,Cinema,Card,gift
-63.14,2025-12-07,Rent,Necklace materials,Card,monthly
-41.0,2025-12-08,Utilities,Groceries,Cash,
-205.46,2025-12-09,Rent,Groceries,Card,
-252.51,2025-12-10,Rent,Electricity,Card,gift
-107.4,2025-12-10,Shopping,Coffee,Card,gift
-44.91,2025-12-10,Food,Groceries,Transfer,urgent
-184.12,2025-12-15,Marketing,Lunch,Cash,
-325.24,2025-12-16,Jewelry Supplies,Electricity,Transfer,business
-115.28,2025-12-16,Rent,Cinema,Card,business
-140.71,2025-12-18,Transport,Cinema,Card,urgent
-233.93,2025-12-20,Transport,Lunch,Card,business
-278.12,2025-12-25,Marketing,Electricity,Cash,business
-294.75,2025-12-27,Food,Coffee,Cash,urgent
-326.49,2025-12-30,Rent,Groceries,Card,monthly
-121.81,2026-01-03,Shopping,Lunch,Transfer,monthly
-25.0,2026-01-04,Materials,Braclet gold model Anderson,Cash,"cash, materials, braclets, gold"
-32.0,2026-01-04,Materials,Ear rings,cash,
+244.19,2025-10-09,Gemstones,Studio rent,Cash,gift
+214.69,2025-10-13,Gold/Silver,Gold chain purchase,Cash,personal
+149.42,2025-10-15,Gold/Silver,Lunch with supplier,Transfer,
+10.29,2025-10-18,Jewelry Supplies,Gemstone beads,Card,gift
+13.47,2025-10-19,Packaging,TikTok ad campaign,Card,monthly
+335.68,2025-10-20,Transport,Packaging boxes,Cash,
+193.02,2025-10-20,Instagram Ads,Silver wire,Transfer,urgent
+45.58,2025-10-21,Entertainment,Studio rent,Transfer,business
+211.21,2025-10-22,Utilities,Packaging boxes,Transfer,business
+43.21,2025-10-22,Packaging,Coffee run,Card,monthly
+236.67,2025-10-22,Instagram Ads,Electricity bill,Transfer,monthly
+99.72,2025-10-23,Gold/Silver,Lunch with supplier,Card,business
+101.55,2025-10-27,Packaging,Lunch with supplier,Transfer,business
+97.41,2025-10-28,Transport,Gemstone beads,Card,
+117.14,2025-10-28,Utilities,Gold chain purchase,Card,business
+250.96,2025-10-29,Instagram Ads,Taxi to meeting,Card,gift
+162.19,2025-10-30,Marketing,Lunch with supplier,Cash,urgent
+128.39,2025-10-30,Rent,New pliers set,Card,personal
+129.75,2025-10-31,Jewelry Supplies,TikTok ad campaign,Cash,gift
+292.13,2025-11-02,Utilities,Lunch with supplier,Card,urgent
+128.33,2025-11-02,Marketing,Gemstone beads,Cash,personal
+27.75,2025-11-03,Entertainment,Gold chain purchase,Cash,
+137.53,2025-11-06,Jewelry Supplies,Taxi to meeting,Cash,business
+183.86,2025-11-08,Utilities,Studio rent,Card,urgent
+273.88,2025-11-08,Jewelry Supplies,Taxi to meeting,Transfer,business
+120.42,2025-11-11,Rent,Instagram boosted post,Card,gift
+285.02,2025-11-15,Jewelry Supplies,Silver wire,Cash,monthly
+136.17,2025-11-16,Tools,Studio rent,Transfer,personal
+32.02,2025-11-17,Instagram Ads,TikTok ad campaign,Cash,
+168.78,2025-11-18,Gold/Silver,TikTok ad campaign,Card,business
+12.78,2025-11-18,Instagram Ads,TikTok ad campaign,Cash,urgent
+240.37,2025-11-20,Entertainment,Gold chain purchase,Card,business
+258.56,2025-11-22,Packaging,Gold chain purchase,Card,business
+339.08,2025-11-23,Jewelry Supplies,Gold chain purchase,Cash,
+108.06,2025-11-25,Instagram Ads,Coffee run,Transfer,gift
+238.11,2025-11-25,Jewelry Supplies,Instagram boosted post,Card,urgent
+191.84,2025-11-29,Tools,Gold chain purchase,Card,monthly
+13.72,2025-11-30,Packaging,Coffee run,Transfer,
+128.72,2025-12-01,Packaging,Gemstone beads,Cash,monthly
+319.14,2025-12-03,Gold/Silver,Lunch with supplier,Cash,urgent
+212.12,2025-12-05,Gold/Silver,Gold chain purchase,Cash,personal
+167.23,2025-12-11,Entertainment,Lunch with supplier,Cash,urgent
+164.27,2025-12-12,Marketing,Silver wire,Cash,personal
+179.35,2025-12-15,Transport,Studio rent,Transfer,urgent
+282.98,2025-12-15,Gemstones,Packaging boxes,Transfer,
+97.65,2025-12-16,Gold/Silver,New pliers set,Card,gift
+241.85,2025-12-16,Utilities,Taxi to meeting,Cash,business
+300.74,2025-12-17,Transport,TikTok ad campaign,Transfer,urgent
+242.94,2025-12-21,Packaging,TikTok ad campaign,Transfer,personal
+13.82,2025-12-24,Transport,Studio rent,Transfer,personal
+145.26,2025-12-24,Marketing,TikTok ad campaign,Transfer,personal
+25.44,2025-12-26,Jewelry Supplies,Electricity bill,Card,urgent
+295.16,2025-12-27,Rent,TikTok ad campaign,Card,
+30.49,2025-12-29,Instagram Ads,Instagram boosted post,Card,gift
+281.89,2025-12-30,Utilities,Coffee run,Transfer,urgent
+199.75,2026-01-01,Jewelry Supplies,Packaging boxes,Transfer,
+191.21,2026-01-04,Marketing,Packaging boxes,Transfer,gift
+202.23,2026-01-07,Gold/Silver,Gemstone beads,Card,gift
+227.93,2026-01-07,Transport,Studio rent,Cash,urgent
+335.59,2026-01-07,Gold/Silver,Packaging boxes,Card,urgent

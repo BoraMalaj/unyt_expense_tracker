@@ -5,9 +5,12 @@ import random
 import os
 
 def generate_dummy_expenses(n=50):
-    categories = ["Food", "Transport", "Entertainment", "Rent", "Utilities", "Shopping", "Jewelry Supplies", "Marketing"]
+    categories = ["Jewelry Supplies", "Gold/Silver", "Gemstones", "Packaging", "Marketing", 
+    "Instagram Ads", "Transport", "Rent", "Utilities", "Entertainment", "Tools"]
     payment_methods = ["Cash", "Card", "Transfer"]
-    descriptions = ["Lunch", "Taxi", "Cinema", "Electricity", "Groceries", "Necklace materials", "Instagram ads", "Coffee"]
+    descriptions = ["Gold chain purchase", "Instagram boosted post", "Lunch with supplier", "Gemstone beads", 
+    "Packaging boxes", "Taxi to meeting", "Electricity bill", "Studio rent", "Coffee run", 
+    "New pliers set", "TikTok ad campaign", "Silver wire"]
 
     dates = [datetime.now().date() - timedelta(days=random.randint(0, 90)) for _ in range(n)]
     dates.sort()
@@ -29,10 +32,12 @@ def generate_dummy_expenses(n=50):
 
 def generate_dummy_budgets():
     budgets = [
-        {"category": "Food", "amount": 300.0, "period": "monthly", "start_date": "2025-12-01", "end_date": "2025-12-31"},
-        {"category": "Transport", "amount": 150.0, "period": "monthly", "start_date": "2025-12-01", "end_date": "2025-12-31"},
-        {"category": "Entertainment", "amount": 100.0, "period": "monthly", "start_date": "2025-12-01", "end_date": "2025-12-31"},
-        {"category": "Overall", "amount": 1200.0, "period": "monthly", "start_date": "2025-12-01", "end_date": "2025-12-31"},
+        {"category": "Jewelry Supplies", "amount": 1200.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
+        {"category": "Marketing", "amount": 400.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
+        {"category": "Instagram Ads", "amount": 300.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
+        {"category": "Packaging", "amount": 150.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
+        {"category": "Transport", "amount": 150.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
+        {"category": "overall", "amount": 2500.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
     ]
     pd.DataFrame(budgets).to_csv("budgets.csv", index=False)
     print("Created budgets.csv")

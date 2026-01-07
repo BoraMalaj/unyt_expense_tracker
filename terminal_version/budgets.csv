@@ -1,5 +1,7 @@
 category,amount,period,start_date,end_date
-Food,300.0,monthly,2025-12-01 00:00:00,2025-12-31 00:00:00
-Transport,150.0,monthly,2025-12-01 00:00:00,2025-12-31 00:00:00
-Entertainment,100.0,monthly,2025-12-01 00:00:00,2025-12-31 00:00:00
-Overall,1200.0,monthly,2025-12-01 00:00:00,2025-12-31 00:00:00
+Jewelry Supplies,1200.0,monthly,2025-12-01,
+Marketing,400.0,monthly,2025-12-01,
+Instagram Ads,300.0,monthly,2025-12-01,
+Packaging,150.0,monthly,2025-12-01,
+Transport,150.0,monthly,2025-12-01,
+overall,2500.0,monthly,2025-12-01,
