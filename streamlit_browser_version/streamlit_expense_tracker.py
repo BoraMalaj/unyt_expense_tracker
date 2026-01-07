@@ -24,6 +24,12 @@ sns.set_style("darkgrid")
 sns.set_palette("husl")
 plt.rcParams['figure.figsize'] = (10, 6)
 
+# Predefined categories to controll easy - it will stay so to manual input here, to be expanded later to a real database SQLite or PostgreSQL
+PREDEFINED_CATEGORIES = [
+    "Jars", "Watches", "Bracelets", "Necklaces", "Rings", "Earrings", "Ties", "Chokers",
+    "transport", "marketing", "instagram ads", "video and image creation", "influencer ads", "miscellaneous"
+]
+
 # Helper method for charts
 def safe_chart(fig, chart_name):
     if fig is None:
@@ -435,7 +441,8 @@ elif page == "Add Expense ➕":
     with st.form("add_form"):
         amount = st.number_input("Amount", min_value=0.01)
         date_input = st.date_input("Date", value=date.today())
-        category = st.text_input("Category")
+        # category = st.text_input("Category")
+        category = st.selectbox("Category", options=PREDEFINED_CATEGORIES)      # predefined categories to be changed manually at the top of the file
         description = st.text_area("Description")
         payment_method = st.selectbox("Payment Method", ["Cash", "Card", "Transfer", "Other"])
         tags = st.text_input("Tags")
@@ -453,7 +460,11 @@ elif page == "Edit/Delete Expense ✏️🗑️":
         with st.form("edit_form"):
             amount = st.number_input("Amount", value=float(manager.expenses_df.at[index, 'amount']))
             date_input = st.date_input("Date", value=manager.expenses_df.at[index, 'date'].date())
-            category = st.text_input("Category", value=manager.expenses_df.at[index, 'category'])
+            # category = st.text_input("Category", value=manager.expenses_df.at[index, 'category'])
+            # predefined categories (see also comment on line 445 by "add new expense")
+            category = st.selectbox("Category", options=PREDEFINED_CATEGORIES, 
+                        index=PREDEFINED_CATEGORIES.index(manager.expenses_df.at[index, 'category']) 
+                        if manager.expenses_df.at[index, 'category'] in PREDEFINED_CATEGORIES else 0)
             description = st.text_area("Description", value=manager.expenses_df.at[index, 'description'])
             payment_method = st.selectbox("Payment Method", ["Cash", "Card", "Transfer", "Other"], index=["Cash", "Card", "Transfer", "Other"].index(manager.expenses_df.at[index, 'payment_method']))
             tags = st.text_input("Tags", value=manager.expenses_df.at[index, 'tags'])
@@ -466,7 +477,8 @@ elif page == "Edit/Delete Expense ✏️🗑️":
 elif page == "Budget Management 💰":
     st.header("Set & Edit Budgets")
     with st.form("add_budget"):
-        category = st.text_input("Category (blank for overall)")
+        # category = st.text_input("Category (blank for overall)")
+        category = st.selectbox("Category (blank for overall)", options=["overall"] + PREDEFINED_CATEGORIES)    # just like lines 445 and 465
         amount = st.number_input("Amount", min_value=0.01)
         period = st.selectbox("Period", ["monthly", "quarterly", "yearly"])
         start_date = st.date_input("Start Date", value=date.today())
