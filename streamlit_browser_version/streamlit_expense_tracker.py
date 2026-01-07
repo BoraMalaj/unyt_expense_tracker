@@ -2,7 +2,7 @@
 
 # Bora's ShinyJar CRM Suite - inspired from her UNYT Project: A full-featured expense tracker app in Streamlit.
 # Tracks daily expenses for jewelry biz, with budgets, alerts, advanced reports, interactive visuals, and exports.
-# Based explicitely in Python, code with comments – easy to understand.
+# Based explicitely in Python, code with comments - easy to understand.
 # The script runs as follows: "streamlit run streamlit_expense_tracker.py" 
 # Check requirements.txt to match the requested python packages for the script
 # Example (partial libs to be installed): pip install streamlit pandas numpy matplotlib seaborn plotly openpyxl
@@ -33,12 +33,12 @@ PREDEFINED_CATEGORIES = [
 # Helper method for charts
 def safe_chart(fig, chart_name):
     if fig is None:
-        st.info(f"No data yet for {chart_name} – add expenses to see magic!")
+        st.info(f"No data yet for {chart_name} - add expenses to see magic!")
         return
     return fig
 
 class Expense:
-    """Simple class for an individual expense – holds all details like amount, date, etc."""
+    """Simple class for an individual expense - holds all details like amount, date, etc."""
     def __init__(self, amount, date, category, description='', payment_method='', tags=''):
         self.amount = amount
         self.date = date  # Expect datetime or date, we'll convert in manager
@@ -60,7 +60,7 @@ class Expense:
 
 class ExpenseManager:
     """Heart of the app: Manages expenses + budgets in one Excel file (two sheets for easy comparison).
-    Handles add/edit/delete, filters, saves – all with error handling."""
+    Handles add/edit/delete, filters, saves - all with error handling."""
     def __init__(self, data_file='shinyjar_data.xlsx'):
         self.data_file = data_file
         self.expenses_df = self._load_expenses()
@@ -73,12 +73,12 @@ class ExpenseManager:
             df['date'] = pd.to_datetime(df['date'])  # Key fix: to datetime64 for .dt and comparisons
             return df
         except FileNotFoundError:
-            st.info("No ShinyJar data file yet – starting fresh!")
+            st.info("No ShinyJar data file yet - starting fresh!")
             return pd.DataFrame(columns=['amount', 'date', 'category', 'description', 'payment_method', 'tags'])
         except ValueError:  # Sheet missing
             return pd.DataFrame(columns=['amount', 'date', 'category', 'description', 'payment_method', 'tags'])
         except Exception as e:
-            st.error(f"Oops, error loading expenses: {e}. Starting fresh.")
+            st.error(f"error loading expenses: {e}. Starting fresh.")
             return pd.DataFrame(columns=['amount', 'date', 'category', 'description', 'payment_method', 'tags'])
 
     def _load_budgets(self):
@@ -93,11 +93,11 @@ class ExpenseManager:
         except ValueError:
             return pd.DataFrame(columns=['category', 'amount', 'period', 'start_date', 'end_date'])
         except Exception as e:
-            st.error(f"Oops, error loading budgets: {e}. Starting fresh.")
+            st.error(f"error loading budgets: {e}. Starting fresh.")
             return pd.DataFrame(columns=['category', 'amount', 'period', 'start_date', 'end_date'])
 
     def _save_all(self):
-        """Save both expenses and budgets to one Excel file – keeps everything together for easy sharing."""
+        """Save both expenses and budgets to one Excel file - keeps everything together for easy sharing."""
         try:
             with pd.ExcelWriter(self.data_file, engine='openpyxl') as writer:
                 self.expenses_df.to_excel(writer, sheet_name="Expenses", index=False)
@@ -116,7 +116,7 @@ class ExpenseManager:
     def edit_expense(self, index, **kwargs):
         """Edit expense at index, update fields, save."""
         if index < 0 or index >= len(self.expenses_df):
-            raise IndexError("Invalid index – out of range.")
+            raise IndexError("Invalid index - out of range.")
         for key, value in kwargs.items():
             if key in self.expenses_df.columns:
                 if key == 'date':
@@ -128,13 +128,13 @@ class ExpenseManager:
     def delete_expense(self, index):
         """Delete expense at index, save."""
         if index < 0 or index >= len(self.expenses_df):
-            raise IndexError("Invalid index – out of range.")
+            raise IndexError("Invalid index - out of range.")
         self.expenses_df = self.expenses_df.drop(index).reset_index(drop=True)
         self._save_all()
         return "Expense deleted successfully!"
 
     def view_expenses(self, filters=None, sort_by=None):
-        """Filter and sort expenses – dynamic as per PDF."""
+        """Filter and sort expenses - dynamic as per PDF."""
         df_view = self.expenses_df.copy()
         if filters:
             for key, value in filters.items():
@@ -174,7 +174,7 @@ class ExpenseManager:
     def edit_budget(self, index, **kwargs):
         """Edit budget at index, update fields, save."""
         if index < 0 or index >= len(self.budgets_df):
-            raise IndexError("Invalid index – out of range.")
+            raise IndexError("Invalid index - out of range.")
         for key, value in kwargs.items():
             if key in self.budgets_df.columns:
                 if key in ['start_date', 'end_date']:
@@ -186,13 +186,13 @@ class ExpenseManager:
     def delete_budget(self, index):
         """Delete budget at index, save."""
         if index < 0 or index >= len(self.budgets_df):
-            raise IndexError("Invalid index – out of range.")
+            raise IndexError("Invalid index - out of range.")
         self.budgets_df = self.budgets_df.drop(index).reset_index(drop=True)
         self._save_all()
         return "Budget deleted successfully!"
 
     def get_alerts(self):
-        """Check for overspending alerts – as per PDF."""
+        """Check for overspending alerts - as per PDF."""
         alerts = []
         today = pd.to_datetime(date.today())
         for _, budget in self.budgets_df.iterrows():
@@ -210,7 +210,7 @@ class ExpenseManager:
         return alerts
 
     def get_budget_vs_actual(self):
-        """Compute budget vs actual for active budgets – for the comparison chart."""
+        """Compute budget vs actual for active budgets - for the comparison chart."""
         if self.budgets_df.empty or self.expenses_df.empty:
             return pd.DataFrame()
         today = pd.to_datetime(date.today())
@@ -242,12 +242,12 @@ class ExpenseManager:
         return comparison
 
 class ReportGenerator:
-    """Generates all the fancy reports – totals, categories, trends, top N, custom ranges."""
+    """Generates all the fancy reports - totals, categories, trends, top N, custom ranges."""
     def __init__(self, manager):
         self.manager = manager
 
     def generate_summary(self, date_range=None):
-        """Basic stats: total, avg, median, min, max, std – NumPy-powered via Pandas."""
+        """Basic stats: total, avg, median, min, max, std - NumPy-powered via Pandas."""
         df = self.manager.view_expenses(filters={'date_range': date_range})
         if df.empty:
             return None
@@ -261,7 +261,7 @@ class ReportGenerator:
         }
 
     def category_summary(self):
-        """Category breakdowns: totals, avgs, counts, % – groupby magic."""
+        """Category breakdowns: totals, avgs, counts, % - groupby magic."""
         grouped = self.manager.expenses_df.groupby('category')['amount'].agg(['sum', 'mean', 'count'])
         total = self.manager.expenses_df['amount'].sum()
         grouped['percentage'] = (grouped['sum'] / total * 100) if total > 0 else 0
@@ -281,7 +281,7 @@ class ReportGenerator:
         return trends
 
     def top_n_expenses(self, n=5):
-        """Top N biggest expenses – quick nlargest."""
+        """Top N biggest expenses - quick nlargest."""
         return self.manager.expenses_df.nlargest(n, 'amount')
 
     def custom_range_report(self, start, end):
@@ -289,7 +289,7 @@ class ReportGenerator:
         return self.generate_summary(date_range=(start, end))
 
     def export_to_pdf(self, data, filename='report.pdf'):
-        """Export report data to PDF – simple table."""
+        """Export report data to PDF - simple table."""
         buffer = BytesIO()
         with PdfPages(buffer) as pdf:
             fig, ax = plt.subplots()
@@ -306,7 +306,7 @@ class ReportGenerator:
         return buffer
 
 class Visualizer:
-    """All visuals: static Seaborn/Matplotlib + interactive Plotly – for that UNYT wow factor."""
+    """All visuals: static Seaborn/Matplotlib + interactive Plotly - for that UNYT wow factor."""
     def __init__(self, manager):
         self.manager = manager
 
@@ -371,7 +371,7 @@ class Visualizer:
         fig = px.line(trends, x='period', y='amount', title=f'{period.capitalize()} Trends')
         return fig
 
-# Helper to download charts as PNG – for exports.
+# Helper to download charts as PNG - for exports.
 def download_chart(fig, name, is_plotly=False):
     buffer = BytesIO()
     if is_plotly:
@@ -382,47 +382,43 @@ def download_chart(fig, name, is_plotly=False):
     st.download_button(f"Download {name} as PNG", buffer, file_name=f"{name}.png", mime="image/png")
 
 # Streamlit App Setup
-st.set_page_config(page_title="ShinyJar Expense Tracker", page_icon="💎", layout="wide")
+st.set_page_config(page_title="ShinyJar Expense Tracker", page_icon=":rocket", layout="wide")
 
 manager = ExpenseManager()
 report_gen = ReportGenerator(manager)
 visualizer = Visualizer(manager)
 
-# Sidebar Menu – left pane with all required features 
-# Extra here is the budget comparison, export of all data and some of the charts
 
-# st.sidebar.title("ShinyJar Menu 💎")
-
-# Sidebar with ShinyJar Logo – pro branding!
+# Sidebar with ShinyJar Logo - pro branding!
 # st.sidebar.image("logo.png", width=150)  # Resizes nicely, keeps aspect ratio; this line doesn't work in the cloud
 st.sidebar.image("https://github.com/BoraMalaj/unyt_expense_tracker/raw/main/streamlit_browser_version/logo.png", width=150)
-st.sidebar.markdown("### ShinyJar Expense Tracker 💎")
+st.sidebar.markdown("### ShinyJar Expense Tracker ")
 
 page = st.sidebar.radio("Select Action", [
-    "Home 🏠",
-    "Add Expense ➕",
-    "Edit/Delete Expense ✏️🗑️",
-    "Budget Management 💰",
-    "View & Filter Expenses 👀",
-    "Summary Report 📊",
-    "Category Summary 🍭",
-    "View Trends 📈",
-    "Top N Expenses 🔥",
-    "Custom Range Report 🗓️",
-    "Visualizing Static Category Totals 📊",
-    "Visualizing Static Category Percentages 🥧",
-    "Visualizing Static Trends 📈",
-    "Interactive Category Totals (Plotly) 🔍",
-    "Interactive Category Percentages (Plotly) 🔍",
-    "Interactive Trends (Plotly) 🔍",
-    "Budget vs Actual Comparison 📊",
-    "Export Reports 📤"
+    "Home ",
+    "Add Expense ",
+    "Edit/Delete Expense ",
+    "Budget Management ",
+    "View & Filter Expenses ",
+    "Summary Report ",
+    "Category Summary ",
+    "View Trends ",
+    "Top N Expenses ",
+    "Custom Range Report ",
+    "Visualizing Static Category Totals ",
+    "Visualizing Static Category Percentages ",
+    "Visualizing Static Trends ",
+    "Interactive Category Totals (Plotly) ",
+    "Interactive Category Percentages (Plotly) ",
+    "Interactive Trends (Plotly) ",
+    "Budget vs Actual Comparison ",
+    "Export Reports "
 ])
 
-# Main Content – right pane
-if page == "Home 🏠":
-    st.title("Welcome to ShinyJar Expense Tracker 💎")
-    st.markdown("Inspired by UNYT Project – track ShinyJar's Jewelry Business Expenses!")
+# Main Content - right pane
+if page == "Home ":
+    st.title("Welcome to ShinyJar Expense Tracker")
+    st.markdown("Inspired by UNYT Project - track ShinyJar's Jewelry Business Expenses!")
     alerts = manager.get_alerts()
     if alerts:
         st.warning("\n".join(alerts))
@@ -436,7 +432,7 @@ if page == "Home 🏠":
     else:
         st.info("Add expenses to start!")
 
-elif page == "Add Expense ➕":
+elif page == "Add Expense ":
     st.header("Add New Expense")
     with st.form("add_form"):
         amount = st.number_input("Amount", min_value=0.01)
@@ -450,7 +446,7 @@ elif page == "Add Expense ➕":
             expense = Expense(amount, pd.to_datetime(date_input), category, description, payment_method, tags)
             st.success(manager.add_expense(expense))
 
-elif page == "Edit/Delete Expense ✏️🗑️":
+elif page == "Edit/Delete Expense ":
     st.header("Edit or Delete Expense")
     if manager.expenses_df.empty:
         st.info("No expenses yet.")
@@ -474,7 +470,7 @@ elif page == "Edit/Delete Expense ✏️🗑️":
         if st.button("Delete"):
             st.success(manager.delete_expense(index))
 
-elif page == "Budget Management 💰":
+elif page == "Budget Management ":
     st.header("Set & Edit Budgets")
     with st.form("add_budget"):
         # category = st.text_input("Category (blank for overall)")
@@ -497,7 +493,7 @@ elif page == "Budget Management 💰":
     if alerts:
         st.warning("\n".join(alerts))
 
-elif page == "View & Filter Expenses 👀":
+elif page == "View & Filter Expenses ":
     st.header("View & Filter Expenses")
     filters = {}
     start_date = st.date_input("Start Date Filter")
@@ -511,7 +507,7 @@ elif page == "View & Filter Expenses 👀":
     df_view = manager.view_expenses(filters, sort_by)
     st.dataframe(df_view)
 
-elif page == "Summary Report 📊":
+elif page == "Summary Report ":
     st.header("Summary Report")
     summary = report_gen.generate_summary()
     if summary:
@@ -519,7 +515,7 @@ elif page == "Summary Report 📊":
     else:
         st.info("No data.")
 
-elif page == "Category Summary 🍭":
+elif page == "Category Summary ":
     st.header("Category Summary")
     summary = report_gen.category_summary()
     if not summary.empty:
@@ -527,7 +523,7 @@ elif page == "Category Summary 🍭":
     else:
         st.info("No data.")
 
-elif page == "View Trends 📈":
+elif page == "View Trends ":
     st.header("View Trends")
     period = st.selectbox("Period", ["monthly", "quarterly", "yearly"])
     trends = report_gen.trends(period)
@@ -536,7 +532,7 @@ elif page == "View Trends 📈":
     else:
         st.info("No data.")
 
-elif page == "Top N Expenses 🔥":
+elif page == "Top N Expenses ":
     st.header("Top N Expenses")
     n = st.number_input("N", value=5)
     top_n = report_gen.top_n_expenses(n)
@@ -545,7 +541,7 @@ elif page == "Top N Expenses 🔥":
     else:
         st.info("No data.")
 
-elif page == "Custom Range Report 🗓️":
+elif page == "Custom Range Report ":
     st.header("Custom Range Report")
     start_date = st.date_input("Start Date")
     end_date = st.date_input("End Date")
@@ -556,7 +552,7 @@ elif page == "Custom Range Report 🗓️":
         else:
             st.info("No data in range.")
 
-elif page == "Visualizing Static Category Totals 📊":
+elif page == "Visualizing Static Category Totals ":
     st.header("Static Category Totals (Seaborn)")
     fig = visualizer.static_category_totals()
     fig = safe_chart(fig, "Category Totals")
@@ -566,7 +562,7 @@ elif page == "Visualizing Static Category Totals 📊":
     else:
         st.info("No data to visualize.")
 
-elif page == "Visualizing Static Category Percentages 🥧":
+elif page == "Visualizing Static Category Percentages ":
     st.header("Static Category Percentages")
     fig = visualizer.static_category_percentages()
     if fig:
@@ -575,7 +571,7 @@ elif page == "Visualizing Static Category Percentages 🥧":
     else:
         st.info("No data to visualize.")
 
-elif page == "Visualizing Static Trends 📈":
+elif page == "Visualizing Static Trends ":
     st.header("Static Trends")
     period = st.selectbox("Period", ["monthly", "quarterly", "yearly"])
     fig = visualizer.static_trends(period)
@@ -585,7 +581,7 @@ elif page == "Visualizing Static Trends 📈":
     else:
         st.info("No data to visualize.")
 
-elif page == "Interactive Category Totals (Plotly) 🔍":
+elif page == "Interactive Category Totals (Plotly) ":
     st.header("Interactive Category Totals")
     fig = visualizer.interactive_category_totals()
     if fig:
@@ -593,7 +589,7 @@ elif page == "Interactive Category Totals (Plotly) 🔍":
     else:
         st.info("No data to visualize.")
 
-elif page == "Interactive Category Percentages (Plotly) 🔍":
+elif page == "Interactive Category Percentages (Plotly) ":
     st.header("Interactive Category Percentages")
     fig = visualizer.interactive_category_percentages()
     if fig:
@@ -601,7 +597,7 @@ elif page == "Interactive Category Percentages (Plotly) 🔍":
     else:
         st.info("No data to visualize.")
 
-elif page == "Interactive Trends (Plotly) 🔍":
+elif page == "Interactive Trends (Plotly) ":
     st.header("Interactive Trends")
     period = st.selectbox("Period", ["monthly", "quarterly", "yearly"])
     fig = visualizer.interactive_trends(period)
@@ -610,7 +606,7 @@ elif page == "Interactive Trends (Plotly) 🔍":
     else:
         st.info("No data to visualize.")
 
-elif page == "Budget vs Actual Comparison 📊":
+elif page == "Budget vs Actual Comparison ":
     st.header("Budget vs Actual Comparison")
     comparison = manager.get_budget_vs_actual()
     if not comparison.empty:
@@ -620,13 +616,13 @@ elif page == "Budget vs Actual Comparison 📊":
     else:
         st.info("No active budgets.")
         
-elif page == "Export Reports 📤":
+elif page == "Export Reports ":
     st.header("Export ShinyJar Data")
     st.info("Download the complete workbook with both Expenses and Budgets sheets")
     try:
         with open("shinyjar_data.xlsx", "rb") as f:
             st.download_button(
-                label="📥 Download Full Workbook (Expenses + Budgets)",
+                label="Download Full Workbook (Expenses + Budgets)",
                 data=f,
                 file_name="ShinyJar_Expense_Tracker.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
