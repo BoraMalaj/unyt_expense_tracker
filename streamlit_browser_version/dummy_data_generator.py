@@ -14,7 +14,7 @@ print("💎 Generating ShinyJar dummy data – jewelry biz style!")
 # ShinyJar Jewelry themed categories
 expense_categories = [
     "Jewelry Supplies", "Gold/Silver", "Gemstones", "Packaging", "Marketing", 
-    "Instagram Ads", "Food", "Transport", "Rent", "Utilities", "Entertainment", "Tools"
+    "Instagram Ads", "Transport", "Rent", "Utilities", "Entertainment", "Tools"
 ]
 
 payment_methods = ["Cash", "Card", "Bank Transfer", "PayPal"]
@@ -63,7 +63,7 @@ def generate_budgets():
         {"category": "Jewelry Supplies", "amount": 1200.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
         {"category": "Marketing", "amount": 400.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
         {"category": "Instagram Ads", "amount": 300.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
-        {"category": "Food", "amount": 250.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
+        {"category": "Packaging", "amount": 150.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
         {"category": "Transport", "amount": 150.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
         {"category": "overall", "amount": 2500.0, "period": "monthly", "start_date": "2025-12-01", "end_date": None},
     ]
@@ -84,7 +84,7 @@ def create_shinyjar_data():
         budgets_df.to_excel(writer, sheet_name="Budgets", index=False)
     
     print(f"✨ Success! Created {file_name}")
-    print(f"   • {len(expenses_df)} expenses (jewelry supplies, ads, food, etc.)")
+    print(f"   • {len(expenses_df)} expenses (jewelry supplies, ads, utilities, etc.)")
     print(f"   • {len(budgets_df)} budgets (some tight → overspend alerts ready!)")
     print("\nNow run: streamlit run streamlit_expense_tracker.py")
     print("Open browser → Home page shows totals, alerts fire, charts pop, Budget vs Actual shows red overspend bars!")
