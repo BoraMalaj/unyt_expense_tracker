@@ -9,9 +9,9 @@
 A powerful Python expense tracking application designed for small businesses and personal finance management. Originally developed as a Master's project at UNYT, this tool has been extended with real-world features inspired by **ShinyJar** – my jewelry business on Instagram and TikTok.
 
 - **🔗 Live Demo:** [Try it on Streamlit Cloud](https://boramalaj-unyt-cloud-expense-tracker.streamlit.app/)
-- **🔗 ShinyJarSuite CRM Backend/Frontend download:** [Download from GitHUb: ](https://github.com/BoraMalaj/shiny_jar_crm)
-- **🔗 ShinyJarSuite CRM Backend:** [Check the Endpoints on Railway: ](https://shinyjarcrm-production.up.railway.app/docs)
-- **🔗 ShinyJarSuite CRM Frontend:** [Try the full Application on Railway: ](https://graceful-delight-production.up.railway.app/)
+- **🔗 ShinyJarSuite CRM Backend/Frontend download:** [Download from GitHUb ](https://github.com/BoraMalaj/shiny_jar_crm)
+- **🔗 ShinyJarSuite CRM Backend:** [Check the Endpoints on Railway ](https://shinyjarcrm-production.up.railway.app/docs)
+- **🔗 ShinyJarSuite CRM Frontend:** [Try the full Application on Railway ](https://graceful-delight-production.up.railway.app/)
 
 ---
 
