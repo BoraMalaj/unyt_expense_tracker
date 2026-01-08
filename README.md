@@ -12,7 +12,7 @@ A powerful Python expense tracking application designed for small businesses and
 - **🔗 ShinyJarSuite CRM Backend/Frontend download:** [Download from GitHUb ](https://github.com/BoraMalaj/shiny_jar_crm)
 - **🔗 ShinyJarSuite CRM Backend:** [Check the Endpoints on Railway ](https://shinyjarcrm-production.up.railway.app/docs)
 - **🔗 ShinyJarSuite CRM Frontend:** [Try it on Railway ](https://graceful-delight-production.up.railway.app/) 
-- **🔗🔗 In Railway Trial area choose the Demo Login and use the followin: user=> Admin, pass=> demo_password_123**
+- **🔗 ShinyJarSuite Login Data in Demo Mode: user=> Admin, pass=> demo_password_123**
 
 ---
 
