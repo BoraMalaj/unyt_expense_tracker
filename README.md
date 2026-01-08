@@ -11,7 +11,7 @@ A powerful Python expense tracking application designed for small businesses and
 - **🔗 Live Demo:** [Try it on Streamlit Cloud](https://boramalaj-unyt-cloud-expense-tracker.streamlit.app/)
 - **🔗 ShinyJarSuite CRM Backend/Frontend download:** [Download from GitHUb ](https://github.com/BoraMalaj/shiny_jar_crm)
 - **🔗 ShinyJarSuite CRM Backend:** [Check the Endpoints on Railway ](https://shinyjarcrm-production.up.railway.app/docs)
-- **🔗 ShinyJarSuite CRM Frontend:** [Try the full Application on Railway ](https://graceful-delight-production.up.railway.app/)
+- **🔗 ShinyJarSuite CRM Frontend:** [Try it on Railway ](https://graceful-delight-production.up.railway.app/) | Demo user: Admin, pass: demo_password_123
 
 ---
 
