@@ -164,16 +164,28 @@ unyt_expense_tracker/
 ## 📸 Screenshots
 
 ### Dashboard Overview
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard_graph.png)
 *Real-time budget alerts and expense summary*
 
+### Manage Expenses
+![Dashboard](screenshots/add_expense.png)
+*Add new expenses*
+
+### Vistualizing Static Charts
+![Charts](screenshots/visualize_categories_by_percent_static.png)
+*View static charts of categories by percentage*
+
 ### Interactive Charts
-![Charts](screenshots/charts.png)
+![Charts](screenshots/interactive_trends_graph.png)
 *Hover over data points for detailed insights*
 
 ### Budget Management
-![Budgets](screenshots/budgets.png)
+![Budgets](screenshots/budget.png)
 *Set and track category-specific budgets*
+
+### Budget vs. Actual Spendings
+![Budgets](screenshots/budget_vs_actual_graph.png)
+*Check the actual spendings vs. budgeted*
 
 _(Other screenshots to be added)_
 
@@ -247,6 +259,7 @@ This project combines my academic work with real-world business experience from 
 ## 🙏 Acknowledgments
 
 - **UNYT University** – For the Master's program foundation
+- **Our professor, Dr. Nelda Kote** – For detailed project specifications and guidance
 - **Streamlit Community** – For the incredible framework and hosting
 - **ShinyJar Customers** – Real-world testing and feedback
 - **Open Source Contributors** – NumPy, Pandas, Matplotlib, and Plotly teams
