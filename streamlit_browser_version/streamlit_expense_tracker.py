@@ -440,7 +440,7 @@ elif page == "Add Expense ":
         # category = st.text_input("Category")
         category = st.selectbox("Category", options=PREDEFINED_CATEGORIES)      # predefined categories to be changed manually at the top of the file
         description = st.text_area("Description")
-        payment_method = st.selectbox("Payment Method", ["Cash", "Card", "Transfer", "Other"])
+        payment_method = st.selectbox("Payment Method", ["Cash", "Card", "Bank Transfer", "PayPal"])
         tags = st.text_input("Tags")
         if st.form_submit_button("Add"):
             expense = Expense(amount, pd.to_datetime(date_input), category, description, payment_method, tags)
@@ -462,7 +462,7 @@ elif page == "Edit/Delete Expense ":
                         index=PREDEFINED_CATEGORIES.index(manager.expenses_df.at[index, 'category']) 
                         if manager.expenses_df.at[index, 'category'] in PREDEFINED_CATEGORIES else 0)
             description = st.text_area("Description", value=manager.expenses_df.at[index, 'description'])
-            payment_method = st.selectbox("Payment Method", ["Cash", "Card", "Transfer", "Other"], index=["Cash", "Card", "Transfer", "Other"].index(manager.expenses_df.at[index, 'payment_method']))
+            payment_method = st.selectbox("Payment Method", ["Cash", "Card", "Bank Transfer", "PayPal"], index=["Cash", "Card", "Bank Transfer", "PayPal"].index(manager.expenses_df.at[index, 'payment_method']))
             tags = st.text_input("Tags", value=manager.expenses_df.at[index, 'tags'])
             if st.form_submit_button("Edit"):
                 kwargs = {'amount': amount, 'date': pd.to_datetime(date_input), 'category': category, 'description': description, 'payment_method': payment_method, 'tags': tags}
